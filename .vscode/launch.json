@@ -1,0 +1,36 @@
+{
+  "version": "0.1.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "node-server",
+      "skipFiles": ["<node_internals>/**"],
+      "port": 9229,
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/**",
+        "!**/node_modules/**"
+      ]
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "chrome-client",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "vscode-edge-devtools.debug",
+      "request": "attach",
+      "name": "edge-client",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "next-full",
+      "configurations": ["node-server", "chrome-client"]
+    }
+  ]
+}
