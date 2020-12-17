@@ -4,7 +4,7 @@
     {
       "type": "node",
       "request": "attach",
-      "name": "node-server",
+      "name": "Next: Node",
       "skipFiles": ["<node_internals>/**"],
       "port": 9229,
       "resolveSourceMapLocations": [
@@ -15,22 +15,22 @@
     {
       "type": "chrome",
       "request": "launch",
-      "name": "chrome-client",
+      "name": "Next: Chrome",
       "url": "http://localhost:3000",
       "webRoot": "${workspaceFolder}"
     },
     {
       "type": "vscode-edge-devtools.debug",
       "request": "attach",
-      "name": "edge-client",
+      "name": "Next: Edge",
       "url": "http://localhost:3000",
       "webRoot": "${workspaceFolder}"
     }
   ],
   "compounds": [
     {
-      "name": "next-full",
-      "configurations": ["node-server", "chrome-client"]
+      "name": "Next: All",
+      "configurations": ["Next: Node", "Next: Chrome"]
     }
   ]
 }
