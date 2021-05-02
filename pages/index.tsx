@@ -1,6 +1,9 @@
 import Head from 'next/head';
+import { useIntl } from 'react-intl';
 
 export default function Home() {
+  const { formatMessage } = useIntl();
+
   return (
     <div>
       <Head>
@@ -18,10 +21,7 @@ export default function Home() {
               </div>
               <div className="divide-y divide-gray-200">
                 <div className="py-8 space-y-4 text-base leading-6 text-gray-700 sm:text-lg sm:leading-7">
-                  <p>
-                    An advanced online playground for Tailwind CSS, including
-                    support for things like:
-                  </p>
+                  <p>{formatMessage({ id: 'helloWorld' })}</p>
                   <ul className="space-y-2 list-disc">
                     <li className="flex items-start">
                       <span className="flex items-center h-6 sm:h-7">
